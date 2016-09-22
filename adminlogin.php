@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Helping Hand</title>
+		<title>MeLife Platform</title>
 		<link rel="stylesheet" href="css/style.css"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 		<meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -28,17 +28,7 @@
 			}
 		</style>
 		<?php
-			$servername = "localhost";
-			$user = "root";
-			$password = "alva";
-			$dbname = "helphand";
-
-			// Create connection	
-			$conn = new mysqli($servername, $user, $password, $dbname);
-			// Check connection
-			if ($conn->connect_error) {
-				die("Connection failed: " . $conn->connect_error);
-			}
+			include "includes/dbConnector.php";
 		?>
 	</head>
 	<body>
