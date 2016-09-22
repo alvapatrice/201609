@@ -1,6 +1,15 @@
-
 <?php
-include "includes/dbConnector.php";
+$servername = "localhost";
+$user = "root";			
+$password = "alva";
+$dbname = "helphand";
+
+// Create connection	
+$conn = new mysqli($servername, $user, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
 $q=$_GET['term'];
 $d=$_GET['typee'];
 $nn="username";

@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>MeLife platform</title>
+	<title>Wish Gadgets</title>
 	<meta name="description" content="A product presentation page built for a Tuts+ course">
 	<meta name="author" content="Adi Purdila">
 
@@ -77,11 +77,7 @@
 			
 			
 								
-			<?php
-				include "login_modal.php";
-
-				require"includes/dbConnector.php";
-			?>
+			<?php include "login_modal.php";?>
 	
 			
 
@@ -90,6 +86,17 @@
 	<div class="row">
 	
 	<?php
+	$servername = "localhost";
+$user = "root";			
+$password = "alva";
+$dbname = "wish_gadgets";
+
+// Create connection	
+$conn = new mysqli($servername, $user, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
 $q=$_POST['search'];
 $s="select * from products where item_name='$q'";
 $result = $conn->query($s);
